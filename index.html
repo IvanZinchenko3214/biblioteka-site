@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека знаний</title>
+
+    <!-- Подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+
+    <!-- Внешние стили (внутри тега style для компактности, но можно вынести в style.css) -->
+    <style>
+        /* Сброс и базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER / НАВИГАЦИЯ ===== */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #3b82f6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1e3a8a;
+        }
+
+        .btn-outline {
+            border: 1px solid #1e3a8a;
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: #1e3a8a !important;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #1e3a8a;
+            color: #fff !important;
+        }
+
+        /* ===== HERO / ГЛАВНЫЙ БАННЕР ===== */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 100%);
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 40px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 i {
+            color: #2563eb;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #1e3a8a;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(30, 58, 138, 0.3);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== SECTION: КНИГИ ===== */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #0f172a;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: #2563eb;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .book-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.25s ease;
+            border: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.07);
+            border-color: #bfdbfe;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            background: #e2e8f0;
+        }
+
+        .book-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: #0f172a;
+        }
+
+        .book-card .author {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .book-card .btn-small {
+            background: #f1f5f9;
+            color: #1e293b;
+            padding: 6px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+
+        .book-card .btn-small:hover {
+            background: #1e3a8a;
+            color: #fff;
+        }
+
+        /* ===== SECTION: О НАС ===== */
+        .about {
+            background: #ffffff;
+            padding: 60px 0;
+            border-radius: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e3a8a;
+        }
+
+        .stat-item .label {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SECTION: ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+        .contact-form-section {
+            background: #f1f5f9;
+            padding: 60px 0;
+            border-radius: 40px;
+            margin: 40px 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .form-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .form-info p {
+            color: #475569;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            transition: border 0.3s;
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: #0f172a;
+            color: #fff;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #1e3a8a;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 0;
+            border-radius: 40px 40px 0 0;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 25px;
+            margin-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* ===== АНИМАЦИЯ (CSS) ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero,
+        .books-grid .book-card,
+        .about,
+        .contact-form-section {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .books-grid .book-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        .books-grid .book-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+        .books-grid .book-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        /* ===== АДАПТИВНОСТЬ (Mobile First) ===== */
+        @media (max-width: 992px) {
+            .hero-grid,
+            .about-wrapper,
+            .form-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .about-stats {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            }
+
+            .btn-primary {
+                padding: 12px 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 30px 0;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .book-card img {
+                height: 150px;
+            }
+            .stat-item .number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container header-wrapper">
+            <a href="#" class="logo">📚 <span>Библиотека</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#books">Книги</a></li>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#contact" class="btn-outline">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h1>Добро пожаловать в <i>мир знаний</i></h1>
+                    <p>Более 50 000 книг, редкие издания, уютная атмосфера и современный сервис. Библиотека, в которую хочется возвращаться.</p>
+                    <a href="#books" class="btn-primary">Смотреть каталог</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Заглушка изображения (SVG или картинка) -->
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop&crop=center&auto=format" alt="Библиотека" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: КНИГИ -->
+        <section id="books" class="container">
+            <h2 class="section-title">Популярные <span>книги</span></h2>
+            <div class="books-grid">
+
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <h3>Мастер и Маргарита</h3>
+                    <p class="author">Михаил Булгаков</p>
+                    <a href="#" class="btn-small">Подробнее</a>
+                </div>
+
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <h3>1984</h3>
+                    <p class="author">Джордж Оруэлл</p>
+                    <a href="#" class="btn-small">Подробнее</a>
+                </div>
+
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <h3>Преступление и наказание</h3>
+                    <p class="author">Фёдор Достоевский</p>
+                    <a href="#" class="btn-small">Подробнее</a>
+                </div>
+
+                <div class="book-card">
+                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <h3>Маленький принц</h3>
+                    <p class="author">Антуан де Сент-Экзюпери</p>
+                    <a href="#" class="btn-small">Подробнее</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: О НАС -->
+        <section id="about" class="container about">
+            <div class="about-wrapper">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop&crop=center&auto=format" alt="Читальный зал" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                </div>
+                <div class="about-text">
+                    <h2>О <span style="color:#2563eb;">библиотеке</span></h2>
+                    <p>Наша библиотека — это не просто хранилище книг. Это пространство для вдохновения, обучения и общения. Мы работаем с 1960 года и сохраняем лучшие традиции книжной культуры.</p>
+                    <p>Ежемесячно мы проводим лекции, книжные клубы и встречи с авторами. Приходите — у нас уютно!</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="number">50K+</div>
+                            <div class="label">Книг</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">12K</div>
+                            <div class="label">Читателей</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="number">65</div>
+                            <div class="label">Лет истории</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+        <section id="contact" class="container contact-form-section">
+            <div class="form-grid">
+                <div class="form-info">
+                    <h2>Свяжитесь <span style="color:#2563eb;">с нами</span></h2>
+                    <p>Остались вопросы? Напишите нам, и мы ответим в течение 24 часов. Все поля обязательны для заполнения.</p>
+                    <p style="margin-top:20px;">📞 +7 (999) 123-45-67<br>📍 г. Москва, ул. Книжная, 1</p>
+                </div>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Иван Петров" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="ivan@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" placeholder="Напишите ваш вопрос..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>📚 Библиотека</h3>
+                <p>Читайте. Развивайтесь. Вдохновляйтесь.</p>
+                <p style="margin-top:10px; font-size:0.9rem;">© 2026 Все права защищены.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color:#fff; margin-bottom:15px;">Навигация</h4>
+                <a href="#books">Каталог</a>
+                <a href="#about">О нас</a>
+                <a href="#contact">Контакты</a>
+            </div>
+            <div class="footer-links">
+                <h4 style="color:#fff; margin-bottom:15px;">Помощь</h4>
+                <a href="#">Часто задаваемые вопросы</a>
+                <a href="#">Правила пользования</a>
+                <a href="#">Поддержка</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            Сайт разработан в рамках учебной практики. Все материалы вымышлены.
+        </div>
+    </footer>
+
+    <!-- Небольшой JavaScript для интерактивности (обработка формы) -->
+    <script>
+        // Простая интерактивность: alert при отправке формы
+        document.querySelector('.btn-submit')?.addEventListener('click', function(e) {
+            e.preventDefault(); // отменяем реальную отправку для демонстрации
+            alert('Спасибо! Ваше сообщение отправлено (демо-режим).');
+        });
+
+        // Пример плавного скролла к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
