@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
 
-    <!-- Внешние стили (внутри тега style для компактности, но можно вынести в style.css) -->
     <style>
         /* Сброс и базовые настройки */
         * {
@@ -195,11 +194,12 @@
 
         .book-card img {
             width: 100%;
-            height: 200px;
+            height: 280px;
             object-fit: cover;
             border-radius: 12px;
             margin-bottom: 15px;
             background: #e2e8f0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .book-card h3 {
@@ -352,6 +352,94 @@
             background: #1e3a8a;
         }
 
+        /* ===== СТРАНИЦЫ ПОМОЩИ (вкладки) ===== */
+        .help-section {
+            background: #ffffff;
+            padding: 60px 0;
+            border-radius: 40px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .help-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #0f172a;
+        }
+
+        .help-section h2 span {
+            color: #2563eb;
+        }
+
+        .help-content {
+            display: none;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .help-content.active {
+            display: block;
+        }
+
+        .help-content h3 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .help-content p {
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .help-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-content ul li {
+            padding: 12px 20px;
+            background: #f8fafc;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            border-left: 4px solid #2563eb;
+        }
+
+        .help-content ul li strong {
+            color: #1e293b;
+        }
+
+        .help-tabs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .help-tab-btn {
+            padding: 12px 28px;
+            background: #f1f5f9;
+            border: 2px solid transparent;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .help-tab-btn:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .help-tab-btn.active {
+            background: #1e3a8a;
+            color: #fff;
+            border-color: #1e3a8a;
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.2);
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: #0f172a;
@@ -379,6 +467,7 @@
             text-decoration: none;
             margin-bottom: 8px;
             transition: color 0.2s;
+            cursor: pointer;
         }
 
         .footer-links a:hover {
@@ -409,7 +498,8 @@
         .hero,
         .books-grid .book-card,
         .about,
-        .contact-form-section {
+        .contact-form-section,
+        .help-section {
             animation: fadeInUp 0.8s ease forwards;
         }
 
@@ -474,8 +564,16 @@
                 grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             }
 
+            .book-card img {
+                height: 200px;
+            }
+
             .btn-primary {
                 padding: 12px 28px;
+            }
+
+            .help-tabs {
+                justify-content: center;
             }
         }
 
@@ -487,7 +585,7 @@
                 font-size: 1.5rem;
             }
             .book-card img {
-                height: 150px;
+                height: 180px;
             }
             .stat-item .number {
                 font-size: 1.5rem;
@@ -506,6 +604,7 @@
                     <li><a href="#books">Книги</a></li>
                     <li><a href="#about">О нас</a></li>
                     <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#help">Помощь</a></li>
                     <li><a href="#contact" class="btn-outline">Войти</a></li>
                 </ul>
             </nav>
@@ -524,40 +623,43 @@
                     <a href="#books" class="btn-primary">Смотреть каталог</a>
                 </div>
                 <div class="hero-image">
-                    <!-- Заглушка изображения (SVG или картинка) -->
                     <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop&crop=center&auto=format" alt="Библиотека" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: КНИГИ -->
+        <!-- SECTION: КНИГИ с РЕАЛЬНЫМИ ОБЛОЖКАМИ -->
         <section id="books" class="container">
             <h2 class="section-title">Популярные <span>книги</span></h2>
             <div class="books-grid">
 
+                <!-- Книга 1: Мастер и Маргарита -->
                 <div class="book-card">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/5228763/2a0000018a42af746e180c86ac5cead0825b/orig" alt="Обложка книги Мастер и Маргарита">
                     <h3>Мастер и Маргарита</h3>
                     <p class="author">Михаил Булгаков</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
+                <!-- Книга 2: 1984 -->
                 <div class="book-card">
-                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/5259050/2a0000018a42b033b7549e0f58107f7c5222/orig" alt="Обложка книги 1984">
                     <h3>1984</h3>
                     <p class="author">Джордж Оруэлл</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
+                <!-- Книга 3: Преступление и наказание -->
                 <div class="book-card">
-                    <img src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/5248549/2a0000018a42b60c200113dbff540b85f0c6/orig" alt="Обложка книги Преступление и наказание">
                     <h3>Преступление и наказание</h3>
                     <p class="author">Фёдор Достоевский</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
+                <!-- Книга 4: Маленький принц -->
                 <div class="book-card">
-                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=400&h=300&fit=crop&crop=center&auto=format" alt="Обложка книги">
+                    <img src="https://avatars.mds.yandex.net/get-mpic/5253406/2a0000018a42b9c2291c1dbb0d1d0005e90f/orig" alt="Обложка книги Маленький принц">
                     <h3>Маленький принц</h3>
                     <p class="author">Антуан де Сент-Экзюпери</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -570,7 +672,7 @@
         <section id="about" class="container about">
             <div class="about-wrapper">
                 <div>
-                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop&crop=center&auto=format" alt="Читальный зал" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop&crop=center&auto=format" alt="Читальный зал библиотеки" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
                 </div>
                 <div class="about-text">
                     <h2>О <span style="color:#2563eb;">библиотеке</span></h2>
@@ -594,13 +696,61 @@
             </div>
         </section>
 
+        <!-- SECTION: ПОМОЩЬ (ВКЛАДКИ) -->
+        <section id="help" class="container help-section">
+            <h2>📖 <span>Помощь</span></h2>
+            
+            <div class="help-tabs">
+                <button class="help-tab-btn active" data-tab="faq">❓ Часто задаваемые вопросы</button>
+                <button class="help-tab-btn" data-tab="rules">📋 Правила пользования</button>
+                <button class="help-tab-btn" data-tab="support">💬 Поддержка</button>
+            </div>
+
+            <!-- Вкладка: FAQ -->
+            <div id="faq" class="help-content active">
+                <h3>Часто задаваемые вопросы</h3>
+                <ul>
+                    <li><strong>Как записаться в библиотеку?</strong> — Для записи необходимо прийти с паспортом в любой день работы библиотеки.</li>
+                    <li><strong>Сколько книг можно взять домой?</strong> — Максимум 5 книг на срок до 30 дней.</li>
+                    <li><strong>Есть ли электронная библиотека?</strong> — Да, мы предоставляем доступ к электронному каталогу и онлайн-чтению.</li>
+                    <li><strong>Можно ли продлить срок возврата?</strong> — Да, продление возможно онлайн или по телефону.</li>
+                    <li><strong>Проводятся ли мероприятия для детей?</strong> — Каждую субботу проходят детские чтения и мастер-классы.</li>
+                </ul>
+            </div>
+
+            <!-- Вкладка: Правила -->
+            <div id="rules" class="help-content">
+                <h3>Правила пользования библиотекой</h3>
+                <ul>
+                    <li><strong>Регистрация:</strong> Читатели регистрируются при предъявлении документа, удостоверяющего личность.</li>
+                    <li><strong>Сроки возврата:</strong> Книги выдаются на 30 дней. При необходимости срок продлевается.</li>
+                    <li><strong>Ответственность:</strong> Читатель несёт ответственность за сохранность книг и своевременный возврат.</li>
+                    <li><strong>Тишина:</strong> В читальных залах необходимо соблюдать тишину и порядок.</li>
+                    <li><strong>Питание и напитки:</strong> Запрещено приносить еду и напитки в читальные залы.</li>
+                </ul>
+            </div>
+
+            <!-- Вкладка: Поддержка -->
+            <div id="support" class="help-content">
+                <h3>Служба поддержки</h3>
+                <p>Мы всегда готовы помочь вам! Вы можете обратиться в нашу службу поддержки следующими способами:</p>
+                <ul>
+                    <li><strong>📞 Телефон:</strong> +7 (919) 123-45-67 (пн–пт, 10:00–18:00)</li>
+                    <li><strong>📧 Email:</strong> support@biblioteka-belgorod.ru</li>
+                    <li><strong>💬 Онлайн-чат:</strong> Доступен на сайте в рабочее время</li>
+                    <li><strong>📍 Адрес:</strong> г. Белгород, ул. Книжная, 1 (кабинет 105)</li>
+                    <li><strong>⏰ Время работы:</strong> Пн–Сб: 10:00–20:00, Вс: выходной</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- SECTION: ФОРМА ОБРАТНОЙ СВЯЗИ -->
         <section id="contact" class="container contact-form-section">
             <div class="form-grid">
                 <div class="form-info">
                     <h2>Свяжитесь <span style="color:#2563eb;">с нами</span></h2>
                     <p>Остались вопросы? Напишите нам, и мы ответим в течение 24 часов. Все поля обязательны для заполнения.</p>
-                    <p style="margin-top:20px;">📞 +7 (999) 123-45-67<br>📍 г. Москва, ул. Книжная, 1</p>
+                    <p style="margin-top:20px;">📞 +7 (919) 123-45-67<br>📍 г. Белгород, ул. Книжная, 1</p>
                 </div>
                 <form action="#" method="POST">
                     <div class="form-group">
@@ -635,12 +785,13 @@
                 <a href="#books">Каталог</a>
                 <a href="#about">О нас</a>
                 <a href="#contact">Контакты</a>
+                <a href="#help">Помощь</a>
             </div>
             <div class="footer-links">
                 <h4 style="color:#fff; margin-bottom:15px;">Помощь</h4>
-                <a href="#">Часто задаваемые вопросы</a>
-                <a href="#">Правила пользования</a>
-                <a href="#">Поддержка</a>
+                <a href="#help" data-tab="faq">Часто задаваемые вопросы</a>
+                <a href="#help" data-tab="rules">Правила пользования</a>
+                <a href="#help" data-tab="support">Поддержка</a>
             </div>
         </div>
         <div class="container footer-bottom">
@@ -648,19 +799,84 @@
         </div>
     </footer>
 
-    <!-- Небольшой JavaScript для интерактивности (обработка формы) -->
+    <!-- JavaScript для интерактивности -->
     <script>
-        // Простая интерактивность: alert при отправке формы
+        // ===== УПРАВЛЕНИЕ ВКЛАДКАМИ ПОМОЩИ =====
+        const tabButtons = document.querySelectorAll('.help-tab-btn');
+        const tabContents = document.querySelectorAll('.help-content');
+
+        // Функция переключения вкладок
+        function switchTab(tabId) {
+            // Скрыть все содержимое
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Убрать активный класс у всех кнопок
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Показать нужную вкладку
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+
+            // Активировать соответствующую кнопку
+            const targetButton = document.querySelector(`.help-tab-btn[data-tab="${tabId}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+        }
+
+        // Обработчики для кнопок вкладок
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                switchTab(tabId);
+                // Обновляем URL без перезагрузки
+                history.pushState(null, '', `#help`);
+            });
+        });
+
+        // Обработчики для ссылок в футере
+        document.querySelectorAll('.footer-links a[data-tab]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                switchTab(tabId);
+                // Прокручиваем к секции помощи
+                document.getElementById('help').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Если в URL есть якорь, открываем соответствующую вкладку
+        window.addEventListener('load', function() {
+            const hash = window.location.hash;
+            if (hash === '#help') {
+                // По умолчанию оставляем активной первую вкладку (FAQ)
+                switchTab('faq');
+            }
+        });
+
+        // ===== ОБРАБОТКА ФОРМЫ =====
         document.querySelector('.btn-submit')?.addEventListener('click', function(e) {
-            e.preventDefault(); // отменяем реальную отправку для демонстрации
+            e.preventDefault();
             alert('Спасибо! Ваше сообщение отправлено (демо-режим).');
         });
 
-        // Пример плавного скролла к якорям
+        // ===== ПЛАВНЫЙ СКРОЛЛ =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href === '#') return;
+                
+                // Проверяем, есть ли data-tab у ссылки в футере
+                if (this.hasAttribute('data-tab')) {
+                    return; // Обрабатывается отдельно выше
+                }
+                
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
