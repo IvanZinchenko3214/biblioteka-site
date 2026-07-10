@@ -835,4 +835,294 @@
             </div>
 
             <div id="rules" class="help-content">
-                <h3>Правила
+                <h3>Правила пользования библиотекой</h3>
+                <ul>
+                    <li><strong>Регистрация:</strong> Читатели регистрируются при предъявлении документа, удостоверяющего личность.</li>
+                    <li><strong>Сроки возврата:</strong> Книги выдаются на 30 дней. При необходимости срок продлевается.</li>
+                    <li><strong>Ответственность:</strong> Читатель несёт ответственность за сохранность книг и своевременный возврат.</li>
+                    <li><strong>Тишина:</strong> В читальных залах необходимо соблюдать тишину и порядок.</li>
+                    <li><strong>Питание и напитки:</strong> Запрещено приносить еду и напитки в читальные залы.</li>
+                </ul>
+            </div>
+
+            <div id="support" class="help-content">
+                <h3>Служба поддержки</h3>
+                <p>Мы всегда готовы помочь вам! Вы можете обратиться в нашу службу поддержки следующими способами:</p>
+                <ul>
+                    <li><strong>📞 Телефон:</strong> +7 (919) 123-45-67 (пн–пт, 10:00–18:00)</li>
+                    <li><strong>📧 Email:</strong> support@biblioteka-belgorod.ru</li>
+                    <li><strong>💬 Онлайн-чат:</strong> Доступен на сайте в рабочее время</li>
+                    <li><strong>📍 Адрес:</strong> г. Белгород, ул. Книжная, 1 (кабинет 105)</li>
+                    <li><strong>⏰ Время работы:</strong> Пн–Сб: 10:00–20:00, Вс: выходной</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION: ФОРМА ОБРАТНОЙ СВЯЗИ -->
+        <section id="contact" class="container contact-form-section">
+            <div class="form-grid">
+                <div class="form-info">
+                    <h2>Свяжитесь <span style="color:#2563eb;">с нами</span></h2>
+                    <p>Остались вопросы? Напишите нам, и мы ответим в течение 24 часов. Все поля обязательны для заполнения.</p>
+                    <p style="margin-top:20px;">📞 +7 (919) 123-45-67<br>📍 г. Белгород, ул. Книжная, 1</p>
+                </div>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Иван Петров" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="ivan@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" placeholder="Напишите ваш вопрос..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>📚 Библиотека</h3>
+                <p>Читайте. Развивайтесь. Вдохновляйтесь.</p>
+                <p style="margin-top:10px; font-size:0.9rem;">© 2026 Все права защищены.</p>
+            </div>
+            <div class="footer-links">
+                <h4 style="color:#fff; margin-bottom:15px;">Навигация</h4>
+                <a href="#books">Каталог</a>
+                <a href="#about">О нас</a>
+                <a href="#contact">Контакты</a>
+                <a href="#help">Помощь</a>
+            </div>
+            <div class="footer-links">
+                <h4 style="color:#fff; margin-bottom:15px;">Помощь</h4>
+                <a href="#help" data-tab="faq">Часто задаваемые вопросы</a>
+                <a href="#help" data-tab="rules">Правила пользования</a>
+                <a href="#help" data-tab="support">Поддержка</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            Сайт разработан в рамках учебной практики. Все материалы вымышлены.
+        </div>
+    </footer>
+
+    <script>
+        // ===== ДАННЫЕ КНИГ (база) =====
+        const booksData = {
+            1: {
+                title: 'Мастер и Маргарита',
+                author: 'Михаил Булгаков',
+                year: '1966',
+                pages: '480',
+                genre: 'Роман, мистика',
+                description: 'Великий роман Михаила Булгакова, в котором переплетаются судьбы Мастера, его возлюбленной Маргариты и самого дьявола — Воланда. Это история о любви, творчестве, вере и искуплении, наполненная глубоким философским смыслом и иронией.',
+                cover: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\' viewBox=\'0 0 300 400\'%3E%3Crect width=\'300\' height=\'400\' fill=\'%23f0f0f0\'/%3E%3Crect x=\'10\' y=\'10\' width=\'280\' height=\'380\' fill=\'%23f8fafc\' stroke=\'%23cbd5e1\' stroke-width=\'2\'/%3E%3Ctext x=\'150\' y=\'120\' font-family=\'Georgia, serif\' font-size=\'32\' text-anchor=\'middle\' fill=\'%231e293b\'%3EМАСТЕР%3C/text%3E%3Ctext x=\'150\' y=\'170\' font-family=\'Georgia, serif\' font-size=\'32\' text-anchor=\'middle\' fill=\'%231e293b\'%3EИ%3C/text%3E%3Ctext x=\'150\' y=\'220\' font-family=\'Georgia, serif\' font-size=\'32\' text-anchor=\'middle\' fill=\'%231e293b\'%3EМАРГАРИТА%3C/text%3E%3Ctext x=\'150\' y=\'280\' font-family=\'Georgia, serif\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23475069\'%3EМ. Булгаков%3C/text%3E%3C/svg%3E'
+            },
+            2: {
+                title: '1984',
+                author: 'Джордж Оруэлл',
+                year: '1949',
+                pages: '328',
+                genre: 'Антиутопия, роман',
+                description: 'Культовый роман-антиутопия Джорджа Оруэлла, рисующий пугающий мир тотального контроля и подавления личности. Главный герой Уинстон Смит пытается сохранить человеческое достоинство в обществе, где Большой Брат видит всё.',
+                cover: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\' viewBox=\'0 0 300 400\'%3E%3Crect width=\'300\' height=\'400\' fill=\'%23f0f0f0\'/%3E%3Crect x=\'10\' y=\'10\' width=\'280\' height=\'380\' fill=\'%23fef2f2\' stroke=\'%23fca5a5\' stroke-width=\'2\'/%3E%3Ctext x=\'150\' y=\'150\' font-family=\'Georgia, serif\' font-size=\'64\' text-anchor=\'middle\' fill=\'%23991b1b\'%3E1984%3C/text%3E%3Ctext x=\'150\' y=\'220\' font-family=\'Georgia, serif\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23475069\'%3EДж. Оруэлл%3C/text%3E%3C/svg%3E'
+            },
+            3: {
+                title: 'Преступление и наказание',
+                author: 'Фёдор Достоевский',
+                year: '1866',
+                pages: '672',
+                genre: 'Роман, психологическая драма',
+                description: 'Гениальный роман Достоевского, в котором раскрывается трагедия молодого студента Родиона Раскольникова, решившего проверить свою теорию о «праве на кровь». Это глубокое исследование природы преступления, вины и искупления.',
+                cover: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\' viewBox=\'0 0 300 400\'%3E%3Crect width=\'300\' height=\'400\' fill=\'%23f0f0f0\'/%3E%3Crect x=\'10\' y=\'10\' width=\'280\' height=\'380\' fill=\'%23f0f9ff\' stroke=\'%237dd3fc\' stroke-width=\'2\'/%3E%3Ctext x=\'150\' y=\'120\' font-family=\'Georgia, serif\' font-size=\'26\' text-anchor=\'middle\' fill=\'%231e293b\'%3EПРЕСТУПЛЕНИЕ%3C/text%3E%3Ctext x=\'150\' y=\'170\' font-family=\'Georgia, serif\' font-size=\'26\' text-anchor=\'middle\' fill=\'%231e293b\'%3EИ%3C/text%3E%3Ctext x=\'150\' y=\'220\' font-family=\'Georgia, serif\' font-size=\'26\' text-anchor=\'middle\' fill=\'%231e293b\'%3EНАКАЗАНИЕ%3C/text%3E%3Ctext x=\'150\' y=\'280\' font-family=\'Georgia, serif\' font-size=\'20\' text-anchor=\'middle\' fill=\'%23475069\'%3EФ. Достоевский%3C/text%3E%3C/svg%3E'
+            },
+            4: {
+                title: 'Маленький принц',
+                author: 'Антуан де Сент-Экзюпери',
+                year: '1943',
+                pages: '96',
+                genre: 'Философская сказка',
+                description: 'Трогательная и мудрая сказка Антуана де Сент-Экзюпери о дружбе, любви, ответственности и смысле жизни. Маленький принц путешествует по планетам и встречает разных взрослых, чтобы в конце понять самое главное, что «зорко одно лишь сердце».',
+                cover: 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'400\' viewBox=\'0 0 300 400\'%3E%3Crect width=\'300\' height=\'400\' fill=\'%23f0f0f0\'/%3E%3Crect x=\'10\' y=\'10\' width=\'280\' height=\'380\' fill=\'%23fdf4ff\' stroke=\'%23e879f9\' stroke-width=\'2\'/%3E%3Ctext x=\'150\' y=\'120\' font-family=\'Georgia, serif\' font-size=\'26\' text-anchor=\'middle\' fill=\'%231e293b\'%3EМАЛЕНЬКИЙ%3C/text%3E%3Ctext x=\'150\' y=\'180\' font-family=\'Georgia, serif\' font-size=\'26\' text-anchor=\'middle\' fill=\'%231e293b\'%3EПРИНЦ%3C/text%3E%3Ctext x=\'150\' y=\'260\' font-family=\'Georgia, serif\' font-size=\'18\' text-anchor=\'middle\' fill=\'%23475069\'%3EА. де Сент-Экзюпери%3C/text%3E%3C/svg%3E'
+            }
+        };
+
+        // ===== ОТОБРАЖЕНИЕ ДЕТАЛЕЙ КНИГИ =====
+        const detailPage = document.getElementById('bookDetailPage');
+        const hero = document.getElementById('mainHero');
+        const booksSection = document.getElementById('books');
+        const aboutSection = document.getElementById('about');
+        const helpSection = document.getElementById('help');
+        const contactSection = document.getElementById('contact');
+
+        const detailCover = document.getElementById('detailCover');
+        const detailTitle = document.getElementById('detailTitle');
+        const detailAuthor = document.getElementById('detailAuthor');
+        const detailYear = document.getElementById('detailYear');
+        const detailPages = document.getElementById('detailPages');
+        const detailGenre = document.getElementById('detailGenre');
+        const detailDesc = document.getElementById('detailDesc');
+
+        function showBookDetail(bookId) {
+            const book = booksData[bookId];
+            if (!book) return;
+
+            detailCover.src = book.cover;
+            detailTitle.textContent = book.title;
+            detailAuthor.textContent = book.author;
+            detailYear.textContent = book.year;
+            detailPages.textContent = book.pages;
+            detailGenre.textContent = book.genre;
+            detailDesc.textContent = book.description;
+
+            // Скрываем все основные секции, показываем детали
+            hero.style.display = 'none';
+            booksSection.style.display = 'none';
+            aboutSection.style.display = 'none';
+            helpSection.style.display = 'none';
+            contactSection.style.display = 'none';
+            detailPage.classList.add('active');
+
+            // Прокрутка к верху деталей
+            detailPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            window.history.pushState({ bookId: bookId }, '', `?book=${bookId}`);
+        }
+
+        function hideBookDetail() {
+            detailPage.classList.remove('active');
+            hero.style.display = 'block';
+            booksSection.style.display = 'block';
+            aboutSection.style.display = 'block';
+            helpSection.style.display = 'block';
+            contactSection.style.display = 'block';
+            window.history.pushState(null, '', window.location.pathname);
+        }
+
+        // ===== ОБРАБОТЧИКИ =====
+        document.querySelectorAll('.detail-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const id = this.getAttribute('data-id');
+                showBookDetail(id);
+            });
+        });
+
+        document.getElementById('backToCatalog').addEventListener('click', function() {
+            hideBookDetail();
+        });
+
+        // Логотип ведёт на главную
+        document.getElementById('mainLogo').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (detailPage.classList.contains('active')) {
+                hideBookDetail();
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // Навигация по якорям: если открыта деталь, скрываем её
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (detailPage.classList.contains('active')) {
+                    hideBookDetail();
+                    // После скрытия переходим по ссылке
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        setTimeout(() => {
+                            const target = document.querySelector(targetId);
+                            if (target) target.scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
+                    }
+                }
+            });
+        });
+
+        // Ссылки в футере (помощь)
+        document.querySelectorAll('.footer-links a[data-tab]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (detailPage.classList.contains('active')) hideBookDetail();
+                const tabId = this.getAttribute('data-tab');
+                switchTab(tabId);
+                setTimeout(() => {
+                    document.getElementById('help').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 150);
+            });
+        });
+
+        // ===== УПРАВЛЕНИЕ ВКЛАДКАМИ ПОМОЩИ =====
+        const tabButtons = document.querySelectorAll('.help-tab-btn');
+        const tabContents = document.querySelectorAll('.help-content');
+
+        function switchTab(tabId) {
+            tabContents.forEach(content => content.classList.remove('active'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) targetContent.classList.add('active');
+            const targetButton = document.querySelector(`.help-tab-btn[data-tab="${tabId}"]`);
+            if (targetButton) targetButton.classList.add('active');
+        }
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                switchTab(tabId);
+                history.pushState(null, '', `#help`);
+            });
+        });
+
+        // ===== ОБРАБОТКА ФОРМЫ =====
+        document.querySelector('.btn-submit')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Спасибо! Ваше сообщение отправлено (демо-режим).');
+        });
+
+        // ===== ПЛАВНЫЙ СКРОЛЛ (кроме деталей) =====
+        document.querySelectorAll('a[href^="#"]:not([data-tab])').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                if (this.hasAttribute('data-tab')) return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== ВОССТАНОВЛЕНИЕ СОСТОЯНИЯ ПО URL =====
+        window.addEventListener('load', function() {
+            const params = new URLSearchParams(window.location.search);
+            const bookId = params.get('book');
+            if (bookId && booksData[bookId]) {
+                showBookDetail(bookId);
+            }
+            const hash = window.location.hash;
+            if (hash === '#help' && !detailPage.classList.contains('active')) {
+                switchTab('faq');
+            }
+        });
+
+        // Обработка кнопки "Назад" в браузере
+        window.addEventListener('popstate', function(e) {
+            if (e.state && e.state.bookId) {
+                showBookDetail(e.state.bookId);
+            } else {
+                if (detailPage.classList.contains('active')) {
+                    hideBookDetail();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
