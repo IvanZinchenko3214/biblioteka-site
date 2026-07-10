@@ -623,7 +623,7 @@
                     <a href="#books" class="btn-primary">Смотреть каталог</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop&crop=center&auto=format" alt="Библиотека" loading="lazy">
+                    <img src="https://i.ibb.co/0Z2Hq8x/master-i-margarita.jpg" alt="Библиотека" loading="lazy">
                 </div>
             </div>
         </section>
@@ -635,7 +635,7 @@
 
                 <!-- Книга 1: Мастер и Маргарита -->
                 <div class="book-card">
-                    <img src="https://avatars.mds.yandex.net/get-mpic/5228763/2a0000018a42af746e180c86ac5cead0825b/orig" alt="Обложка книги Мастер и Маргарита">
+                    <img src="https://i.ibb.co/0Z2Hq8x/master-i-margarita.jpg" alt="Обложка книги Мастер и Маргарита">
                     <h3>Мастер и Маргарита</h3>
                     <p class="author">Михаил Булгаков</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -643,7 +643,7 @@
 
                 <!-- Книга 2: 1984 -->
                 <div class="book-card">
-                    <img src="https://avatars.mds.yandex.net/get-mpic/5259050/2a0000018a42b033b7549e0f58107f7c5222/orig" alt="Обложка книги 1984">
+                    <img src="https://i.ibb.co/PGG9KL7/1984.jpg" alt="Обложка книги 1984">
                     <h3>1984</h3>
                     <p class="author">Джордж Оруэлл</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -651,7 +651,7 @@
 
                 <!-- Книга 3: Преступление и наказание -->
                 <div class="book-card">
-                    <img src="https://avatars.mds.yandex.net/get-mpic/5248549/2a0000018a42b60c200113dbff540b85f0c6/orig" alt="Обложка книги Преступление и наказание">
+                    <img src="https://i.ibb.co/pZHTLwD/prestuplenie-i-nakazanie.jpg" alt="Обложка книги Преступление и наказание">
                     <h3>Преступление и наказание</h3>
                     <p class="author">Фёдор Достоевский</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -659,7 +659,7 @@
 
                 <!-- Книга 4: Маленький принц -->
                 <div class="book-card">
-                    <img src="https://avatars.mds.yandex.net/get-mpic/5253406/2a0000018a42b9c2291c1dbb0d1d0005e90f/orig" alt="Обложка книги Маленький принц">
+                    <img src="https://i.ibb.co/1G5b7c9/malenkiy-princ.jpg" alt="Обложка книги Маленький принц">
                     <h3>Маленький принц</h3>
                     <p class="author">Антуан де Сент-Экзюпери</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -672,7 +672,7 @@
         <section id="about" class="container about">
             <div class="about-wrapper">
                 <div>
-                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop&crop=center&auto=format" alt="Читальный зал библиотеки" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                    <img src="https://i.ibb.co/cx8pQm3/library-reading-hall.jpg" alt="Читальный зал библиотеки" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
                 </div>
                 <div class="about-text">
                     <h2>О <span style="color:#2563eb;">библиотеке</span></h2>
@@ -799,63 +799,49 @@
         </div>
     </footer>
 
-    <!-- JavaScript для интерактивности -->
+    <!-- JavaScript -->
     <script>
         // ===== УПРАВЛЕНИЕ ВКЛАДКАМИ ПОМОЩИ =====
         const tabButtons = document.querySelectorAll('.help-tab-btn');
         const tabContents = document.querySelectorAll('.help-content');
 
-        // Функция переключения вкладок
         function switchTab(tabId) {
-            // Скрыть все содержимое
             tabContents.forEach(content => {
                 content.classList.remove('active');
             });
-            
-            // Убрать активный класс у всех кнопок
             tabButtons.forEach(btn => {
                 btn.classList.remove('active');
             });
-
-            // Показать нужную вкладку
             const targetContent = document.getElementById(tabId);
             if (targetContent) {
                 targetContent.classList.add('active');
             }
-
-            // Активировать соответствующую кнопку
             const targetButton = document.querySelector(`.help-tab-btn[data-tab="${tabId}"]`);
             if (targetButton) {
                 targetButton.classList.add('active');
             }
         }
 
-        // Обработчики для кнопок вкладок
         tabButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const tabId = this.getAttribute('data-tab');
                 switchTab(tabId);
-                // Обновляем URL без перезагрузки
                 history.pushState(null, '', `#help`);
             });
         });
 
-        // Обработчики для ссылок в футере
         document.querySelectorAll('.footer-links a[data-tab]').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const tabId = this.getAttribute('data-tab');
                 switchTab(tabId);
-                // Прокручиваем к секции помощи
                 document.getElementById('help').scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Если в URL есть якорь, открываем соответствующую вкладку
         window.addEventListener('load', function() {
             const hash = window.location.hash;
             if (hash === '#help') {
-                // По умолчанию оставляем активной первую вкладку (FAQ)
                 switchTab('faq');
             }
         });
@@ -871,12 +857,9 @@
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
                 if (href === '#') return;
-                
-                // Проверяем, есть ли data-tab у ссылки в футере
                 if (this.hasAttribute('data-tab')) {
-                    return; // Обрабатывается отдельно выше
+                    return;
                 }
-                
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
