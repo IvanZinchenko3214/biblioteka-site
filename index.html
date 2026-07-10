@@ -79,19 +79,6 @@
             color: #1e3a8a;
         }
 
-        .btn-outline {
-            border: 1px solid #1e3a8a;
-            padding: 8px 20px;
-            border-radius: 30px;
-            color: #1e3a8a !important;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline:hover {
-            background: #1e3a8a;
-            color: #fff !important;
-        }
-
         /* ===== HERO / ГЛАВНЫЙ БАННЕР ===== */
         .hero {
             padding: 60px 0;
@@ -195,11 +182,11 @@
         .book-card img {
             width: 100%;
             height: 280px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 12px;
             margin-bottom: 15px;
-            background: #e2e8f0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #f8fafc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
         .book-card h3 {
@@ -605,7 +592,6 @@
                     <li><a href="#about">О нас</a></li>
                     <li><a href="#contact">Контакты</a></li>
                     <li><a href="#help">Помощь</a></li>
-                    <li><a href="#contact" class="btn-outline">Войти</a></li>
                 </ul>
             </nav>
         </div>
@@ -623,43 +609,43 @@
                     <a href="#books" class="btn-primary">Смотреть каталог</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://i.ibb.co/0Z2Hq8x/master-i-margarita.jpg" alt="Библиотека" loading="lazy">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23e0e7ff'/%3E%3Crect x='50' y='50' width='500' height='300' rx='20' fill='%23ffffff' opacity='0.8'/%3E%3Ctext x='300' y='180' font-family='Georgia, serif' font-size='32' text-anchor='middle' fill='%231e3a8a'%3E📚%3C/text%3E%3Ctext x='300' y='230' font-family='Georgia, serif' font-size='28' text-anchor='middle' fill='%231e3a8a'%3EБиблиотека%3C/text%3E%3Ctext x='300' y='270' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%23475069'%3EМир знаний ждёт вас!%3C/text%3E%3C/svg%3E" alt="Библиотека" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: КНИГИ с РЕАЛЬНЫМИ ОБЛОЖКАМИ -->
+        <!-- SECTION: КНИГИ -->
         <section id="books" class="container">
             <h2 class="section-title">Популярные <span>книги</span></h2>
             <div class="books-grid">
 
-                <!-- Книга 1: Мастер и Маргарита -->
+                <!-- Мастер и Маргарита -->
                 <div class="book-card">
-                    <img src="https://i.ibb.co/0Z2Hq8x/master-i-margarita.jpg" alt="Обложка книги Мастер и Маргарита">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='280' viewBox='0 0 200 280'%3E%3Crect width='200' height='280' fill='%23f0f0f0'/%3E%3Crect x='10' y='10' width='180' height='260' fill='%23f8fafc' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='100' y='80' font-family='Georgia, serif' font-size='22' text-anchor='middle' fill='%231e293b'%3EМАСТЕР%3C/text%3E%3Ctext x='100' y='110' font-family='Georgia, serif' font-size='22' text-anchor='middle' fill='%231e293b'%3EИ%3C/text%3E%3Ctext x='100' y='140' font-family='Georgia, serif' font-size='22' text-anchor='middle' fill='%231e293b'%3EМАРГАРИТА%3C/text%3E%3Ctext x='100' y='180' font-family='Georgia, serif' font-size='14' text-anchor='middle' fill='%23475069'%3EМ. Булгаков%3C/text%3E%3C/svg%3E" alt="Обложка Мастер и Маргарита">
                     <h3>Мастер и Маргарита</h3>
                     <p class="author">Михаил Булгаков</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
-                <!-- Книга 2: 1984 -->
+                <!-- 1984 -->
                 <div class="book-card">
-                    <img src="https://i.ibb.co/PGG9KL7/1984.jpg" alt="Обложка книги 1984">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='280' viewBox='0 0 200 280'%3E%3Crect width='200' height='280' fill='%23f0f0f0'/%3E%3Crect x='10' y='10' width='180' height='260' fill='%23fef2f2' stroke='%23fca5a5' stroke-width='2'/%3E%3Ctext x='100' y='100' font-family='Georgia, serif' font-size='40' text-anchor='middle' fill='%23991b1b'%3E1984%3C/text%3E%3Ctext x='100' y='140' font-family='Georgia, serif' font-size='14' text-anchor='middle' fill='%23475069'%3EДж. Оруэлл%3C/text%3E%3C/svg%3E" alt="Обложка 1984">
                     <h3>1984</h3>
                     <p class="author">Джордж Оруэлл</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
-                <!-- Книга 3: Преступление и наказание -->
+                <!-- Преступление и наказание -->
                 <div class="book-card">
-                    <img src="https://i.ibb.co/pZHTLwD/prestuplenie-i-nakazanie.jpg" alt="Обложка книги Преступление и наказание">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='280' viewBox='0 0 200 280'%3E%3Crect width='200' height='280' fill='%23f0f0f0'/%3E%3Crect x='10' y='10' width='180' height='260' fill='%23f0f9ff' stroke='%237dd3fc' stroke-width='2'/%3E%3Ctext x='100' y='80' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%231e293b'%3EПРЕСТУПЛЕНИЕ%3C/text%3E%3Ctext x='100' y='110' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%231e293b'%3EИ%3C/text%3E%3Ctext x='100' y='140' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%231e293b'%3EНАКАЗАНИЕ%3C/text%3E%3Ctext x='100' y='180' font-family='Georgia, serif' font-size='14' text-anchor='middle' fill='%23475069'%3EФ. Достоевский%3C/text%3E%3C/svg%3E" alt="Обложка Преступление и наказание">
                     <h3>Преступление и наказание</h3>
                     <p class="author">Фёдор Достоевский</p>
                     <a href="#" class="btn-small">Подробнее</a>
                 </div>
 
-                <!-- Книга 4: Маленький принц -->
+                <!-- Маленький принц -->
                 <div class="book-card">
-                    <img src="https://i.ibb.co/1G5b7c9/malenkiy-princ.jpg" alt="Обложка книги Маленький принц">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='280' viewBox='0 0 200 280'%3E%3Crect width='200' height='280' fill='%23f0f0f0'/%3E%3Crect x='10' y='10' width='180' height='260' fill='%23fdf4ff' stroke='%23e879f9' stroke-width='2'/%3E%3Ctext x='100' y='80' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%231e293b'%3EМАЛЕНЬКИЙ%3C/text%3E%3Ctext x='100' y='110' font-family='Georgia, serif' font-size='18' text-anchor='middle' fill='%231e293b'%3EПРИНЦ%3C/text%3E%3Ctext x='100' y='180' font-family='Georgia, serif' font-size='14' text-anchor='middle' fill='%23475069'%3EА. де Сент-Экзюпери%3C/text%3E%3C/svg%3E" alt="Обложка Маленький принц">
                     <h3>Маленький принц</h3>
                     <p class="author">Антуан де Сент-Экзюпери</p>
                     <a href="#" class="btn-small">Подробнее</a>
@@ -672,7 +658,7 @@
         <section id="about" class="container about">
             <div class="about-wrapper">
                 <div>
-                    <img src="https://i.ibb.co/cx8pQm3/library-reading-hall.jpg" alt="Читальный зал библиотеки" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23f1f5f9'/%3E%3Crect x='40' y='40' width='520' height='320' rx='20' fill='%23ffffff'/%3E%3Ctext x='300' y='100' font-family='Georgia, serif' font-size='28' text-anchor='middle' fill='%231e3a8a'%3E📚 ЧИТАЛЬНЫЙ ЗАЛ%3C/text%3E%3Crect x='80' y='130' width='440' height='10' rx='5' fill='%23e2e8f0'/%3E%3Crect x='80' y='155' width='300' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='175' width='400' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='195' width='350' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='220' width='200' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='240' width='420' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='260' width='280' height='8' rx='4' fill='%23e2e8f0'/%3E%3Crect x='80' y='285' width='150' height='8' rx='4' fill='%23e2e8f0'/%3E%3C/svg%3E" alt="Читальный зал библиотеки" style="width:100%; border-radius:20px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
                 </div>
                 <div class="about-text">
                     <h2>О <span style="color:#2563eb;">библиотеке</span></h2>
@@ -696,7 +682,7 @@
             </div>
         </section>
 
-        <!-- SECTION: ПОМОЩЬ (ВКЛАДКИ) -->
+        <!-- SECTION: ПОМОЩЬ -->
         <section id="help" class="container help-section">
             <h2>📖 <span>Помощь</span></h2>
             
@@ -706,7 +692,6 @@
                 <button class="help-tab-btn" data-tab="support">💬 Поддержка</button>
             </div>
 
-            <!-- Вкладка: FAQ -->
             <div id="faq" class="help-content active">
                 <h3>Часто задаваемые вопросы</h3>
                 <ul>
@@ -718,7 +703,6 @@
                 </ul>
             </div>
 
-            <!-- Вкладка: Правила -->
             <div id="rules" class="help-content">
                 <h3>Правила пользования библиотекой</h3>
                 <ul>
@@ -730,7 +714,6 @@
                 </ul>
             </div>
 
-            <!-- Вкладка: Поддержка -->
             <div id="support" class="help-content">
                 <h3>Служба поддержки</h3>
                 <p>Мы всегда готовы помочь вам! Вы можете обратиться в нашу службу поддержки следующими способами:</p>
@@ -799,7 +782,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // ===== УПРАВЛЕНИЕ ВКЛАДКАМИ ПОМОЩИ =====
         const tabButtons = document.querySelectorAll('.help-tab-btn');
